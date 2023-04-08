@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('product_size_color', function (Blueprint $table) {
             $table->id();
+            $table->foreign('product_size_id')->references('id')->on('product_sizes');
+            $table->foreign('product_color_id')->references('id')->on('product_colors');
+            $table->integer('quantity');
+            $table->decimal('price',10,2)->nullable();
             $table->timestamps();
         });
     }

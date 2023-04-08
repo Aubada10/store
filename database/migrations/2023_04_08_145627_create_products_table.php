@@ -13,7 +13,15 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->longText('description');
+            $table->string('image');
+            $table->decimal('price',8,2)->nullable();
+            $table->decimal('discount_price',8,2)->nullable();
+            //$table->foreignIdFor(Category::class)->constrained();
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
