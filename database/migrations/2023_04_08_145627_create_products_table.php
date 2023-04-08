@@ -19,7 +19,8 @@ return new class extends Migration
             $table->decimal('price',8,2)->nullable();
             $table->decimal('discount_price',8,2)->nullable();
             //$table->foreignIdFor(Category::class)->constrained();
-            $table->foreign('category_id')->references('id')->on('categories');
+            //$table->foreign('category_id')->references('id')->on('categories');
+            $table->foreignId('category_id')->constrained();
             $table->timestamps();
             $table->softDeletes();
         });
