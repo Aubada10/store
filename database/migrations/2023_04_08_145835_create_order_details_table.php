@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('order_details', function (Blueprint $table) {
             $table->id();
-            //$table->foreign('order_id')->references('id')->on('orders');
             $table->foreignId('order_id')->constrained();
             $table->foreignId('product_color_size_id')->constrained('product_size_color');
             // $table->bigInteger('product_color_size_id')->unsigned();

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             //$table->foreign('product_color_size_id')->references('id')->on('product_color_size');
             $table->foreignId('product_color_size_id')->constrained('product_size_color');
+            $table->string('image');
             $table->timestamps();
         });
     }
