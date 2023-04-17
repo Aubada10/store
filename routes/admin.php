@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\IndexController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard.index');
-})->name('index');
-
- Auth::routes();
-
- Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/index',[IndexController::class ,'index'])->name('admin');
